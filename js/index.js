@@ -159,7 +159,7 @@
             alert("At least one exchange & chart pair are needed to get started.");
             return;
         }
-        var urlStr = "?"
+        var urlStr = "coincheck?"
         for (var i=0; i<optl; i++) {
             if (i!=0) urlStr += "&";
             urlStr += "chart=" + options[i].value;
