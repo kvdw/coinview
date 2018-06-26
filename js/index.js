@@ -16,11 +16,13 @@
     const STORAGE_CHARTSPAIRS = "chartPairs";
     const BASEURL_COINIGY = "https://www.coinigy.com/main/markets";
 
-    let gbl_dark = null;
+    let gbl_dark = true;
     let gbl_boxWidth = '';
     let gbl_boxHeight = '';
     let gbl_isStorageUsable = true;
     let gbl_inputPairId = -1;
+
+    
 
     let chartPairs = new Array;
 // setup the UI / charts layout
@@ -289,7 +291,12 @@
                 "show_popup_button": false,
                 "withdateranges": withdateranges,
                 "details": details,
-                "hideideas": true
+                "hideideas": true,
+				"studies": [
+					"MACD@tv-basicstudies",
+					"RSI@tv-basicstudies",
+					"BB@tv-basicstudies"
+				]
             });
 
             let topButtonContainerElement = document.createElement("div");
@@ -524,10 +531,10 @@
                     }
                 } else {
                     //if there are nothing in the localstorage, use some default value
-                    chartPairs.push("COINBASE:BTCUSD");
-                    chartPairs.push("COINBASE:ETHUSD");
-                    chartPairs.push("BITTREX:OMGBTC");
-                    chartPairs.push("BITTREX:BTGBTC");
+                    chartPairs.push("BINANCE:BTCUSDT");
+                    chartPairs.push("BINANCE:LTCUSDT");
+                    chartPairs.push("BINANCE:IOTAUSDT");
+                    chartPairs.push("BINANCE:EOSUSDT");
                 }
             }
             let chartPUrl = location.origin + "/?";
